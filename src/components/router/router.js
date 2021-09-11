@@ -8,22 +8,15 @@ import {
 
 Vue.use(Router);
 
-const routes = [ {
-    path: `/${nameScreen.red}`,
-    name: nameScreen.red,
+const routes = []
+
+for (let color in nameScreen) {
+  routes.push({
+    path: `/${color}`,
+    name: color,
     component: Screens
-  },
-  {
-    path: `/${nameScreen.yellow}`,
-    name: nameScreen.yellow,
-    component: Screens
-  },
-  {
-    path: `/${nameScreen.green}`,
-    name: nameScreen.green,
-    component: Screens
-  },
-]
+  });
+}
 
 const router = new Router({
   mode: 'history',

@@ -1,5 +1,6 @@
 <template>
   <main>
+    <h1 class="visually-hidden">Проект со светофором</h1>
     <section class="timer__container">
       <h3 class="timer__title">Сколько осталось времени для смены сигнала</h3>
       <span class="timer__value">

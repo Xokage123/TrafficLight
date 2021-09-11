@@ -121,7 +121,7 @@ module.exports = {
             template: `${paths.public}/index.html`,
             filename: 'index.html',
             templateParameters: {
-                title: 'Test Maks',
+                title: 'Artemov Maksim - Lights',
             }
         }),
     ]
