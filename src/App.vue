@@ -32,11 +32,11 @@ export default {
     if (!this.$route.name) {
       this.$router
         .push({
-          name: localStorage.getItem("colorScrennNow"),
+          path: `/${localStorage.getItem("colorScrennNow")}`,
         })
         .catch(() => {});
     }
-  },
+  },  
 };
 </script>
 

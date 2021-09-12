@@ -19,7 +19,6 @@ for (let color in nameScreen) {
 }
 
 const router = new Router({
-  mode: 'history',
   routes
 })
 

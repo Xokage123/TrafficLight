@@ -91,7 +91,12 @@ module.exports = {
                             sourceMap: true
                         }
                     },
-                    'sass-loader'
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            implementation: require("sass")
+                        }
+                    }
                 ]
             },
             // MD

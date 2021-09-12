@@ -62,5 +62,3 @@ export default {
   },
 };
 </script>
-
-// animate__flash animate__infinite

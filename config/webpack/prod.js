@@ -1,5 +1,7 @@
 const paths = require('../paths.cjs')
-const { merge } = require('webpack-merge')
+const {
+    merge
+} = require('webpack-merge')
 const common = require('./common.cjs')
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -7,14 +9,6 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default
 
 module.exports = merge(common, {
     mode: 'production',
-    entry: {
-        index: {
-            import: `${paths.src}/index.jsx`,
-            dependOn: ['react', 'helpers']
-        },
-        react: ['react', 'react-dom', 'prop-types'],
-        helpers: ['immer', 'nanoid']
-    },
     devtool: false,
     output: {
         filename: 'js/[name].[contenthash].bundle.js',
@@ -27,16 +21,24 @@ module.exports = merge(common, {
                 MiniCssExtractPlugin.loader,
                 {
                     loader: 'css-loader',
-                    options: { importLoaders: 1 }
+                    options: {
+                        importLoaders: 1
+                    }
                 },
-                'sass-loader'
+                {
+                    loader: "sass-loader",
+                    options: {
+                        implementation: require("sass")
+                    }
+                }
             ]
         }]
     },
     plugins: [
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash].css',
-            chunkFilename: '[id].css'
+            chunkFilename: '[id].css',
+            linkType: false
         }),
 
         new ImageminPlugin({
