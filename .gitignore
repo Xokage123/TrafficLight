@@ -3,3 +3,4 @@ package-lock.json
 build
 __test__
 yarn.lock
+.history

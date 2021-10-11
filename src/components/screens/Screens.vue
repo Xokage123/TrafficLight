@@ -11,10 +11,10 @@
 </template>
 
 <script>
-import Screen from "./Screen.vue";
-import { nameScreen, timeLight, toggleScreen } from "../../data/index";
+import Screen from './Screen.vue';
+import {nameScreen, timeLight, toggleScreen} from '../../data/index';
 export default {
-  name: "Screens",
+  name: 'Screens',
   components: {
     Screen,
   },
@@ -22,8 +22,8 @@ export default {
     return {
       colors: nameScreen,
       activeColor: this.$route.name,
-      timerCounter: "",
-      screenCounter: "",
+      timerCounter: '',
+      screenCounter: '',
       timerValue: timeLight[this.$route.name] / 1000,
       blinking: false,
     };
@@ -31,13 +31,13 @@ export default {
   methods: {
     startAnimation() {
       this.clearAnimation();
-      this.$emit("update-timer", this.timerValue);
+      this.$emit('update-timer', this.timerValue);
       this.timerCounter = window.setInterval(() => {
         --this.timerValue;
         if (this.timerValue <= 3) {
           this.blinking = true;
         }
-        this.$emit("update-timer", this.timerValue);
+        this.$emit('update-timer', this.timerValue);
       }, 1000);
       this.screenCounter = toggleScreen(this.$router, this.$route);
     },
